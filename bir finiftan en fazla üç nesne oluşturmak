@@ -6,7 +6,7 @@ class B {
     }
 
     static B get_nesne() {
-        if (sayac <= 3) {
+        if (sayac <= 3) {//eğer hoca tek bir nesne dese burası <=1 yapıyoruz  
             sayac++;
          return new B();
          
