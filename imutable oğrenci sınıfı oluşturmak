@@ -1,0 +1,66 @@
+package javaapplication6;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+//imutable demek tüm sınıf değişkenleri değiştirlmez hale getirmek,bu yüzden    hepsi final yapıyoruz 
+final class ogrenci {
+    final  String ad_soyad;
+    final  int ogrenci_numarasi;
+    final  List<ders> dersler;
+    ogrenci(String ad_soyad,int ogrenci_numarasi,List<ders> dersler){
+        this.ad_soyad=ad_soyad;     
+        this.ogrenci_numarasi=ogrenci_numarasi; 
+        
+        List<ders> kopya=new ArrayList();
+        for(int i=0;i<dersler.size();i++)
+        {
+        kopya.add(dersler.get(i));
+        }
+        this.dersler=dersler;
+    }
+}
+final class not {
+    final  double vize;
+    final  double final_;
+    final  double but;
+    not(double vize, double final_, double but) {
+        this.but = but;
+        this.final_ = final_;
+        this.vize = vize;
+    }
+}
+
+final class ders{
+     final  String ders_ad;
+    final  int kredi;
+    final  not notlar;
+    ders(String ders_ad, int kredi, not notlar) {
+        this.ders_ad = ders_ad;
+        this.kredi =kredi;
+        this.notlar = notlar;
+    }
+}
+
+public class JavaApplication6 {
+
+    public static void main(String[] args) {
+      
+        not fizik_not=new not(12,34,54);
+          not nyp_not=new not(1,78,54);
+        
+        ders fizik_ders=new ders("Fizik",4,fizik_not);
+         ders nyp_ders=new ders("nyp",4,nyp_not);
+
+          List<ders> abdurrahman_dersleri=new ArrayList();
+          abdurrahman_dersleri.add(fizik_ders);
+          abdurrahman_dersleri.add(nyp_ders);
+        
+    ogrenci abdurrahman=new ogrenci("abdurrahman",160304012,abdurrahman_dersleri);
+    
+    
+   
+    
+    }
+}
