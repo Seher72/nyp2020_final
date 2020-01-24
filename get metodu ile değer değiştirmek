@@ -16,3 +16,6 @@ return kopya;
 }
 
 artık kulancı dizi değerleri istediği gibi değiştirebilir ana dizimiz etkilenmeden
+
+
+daha iyi anlamak için bu örnekte iki durumu test edin  :https://github.com/nypsinav/nyp/blob/master/get%20üzerinden%20değer%20değiştirmek
