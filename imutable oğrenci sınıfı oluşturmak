@@ -6,12 +6,10 @@ import java.util.List;
 
 //imutable demek tüm sınıf değişkenleri değiştirlmez hale getirmek,bu yüzden    hepsi final yapıyoruz 
 final class ogrenci {
-    final  String ad_soyad;
-    final  int ogrenci_numarasi;
+    final  Kimlik kimlik;
     final  List<ders> dersler;
-    ogrenci(String ad_soyad,int ogrenci_numarasi,List<ders> dersler){
-        this.ad_soyad=ad_soyad;     
-        this.ogrenci_numarasi=ogrenci_numarasi; 
+    ogrenci(Kimlik kimlik,List<ders> dersler){
+        this.kimlik=new Kimlik(kimlik.ad_soyad,kimlik.ogrenci_numarasi);
         
         List<ders> kopya=new ArrayList();
         for(int i=0;i<dersler.size();i++)
@@ -19,6 +17,14 @@ final class ogrenci {
         kopya.add(dersler.get(i));
         }
         this.dersler=dersler;
+    }
+}
+final class Kimlik{
+  final  String ad_soyad;
+    final  int ogrenci_numarasi;
+    Kimlik(String ad_soyad,int ogrenci_numarasi){
+        this.ad_soyad=ad_soyad;     
+        this.ogrenci_numarasi=ogrenci_numarasi;      
     }
 }
 final class not {
@@ -57,10 +63,13 @@ public class JavaApplication6 {
           abdurrahman_dersleri.add(fizik_ders);
           abdurrahman_dersleri.add(nyp_ders);
         
-    ogrenci abdurrahman=new ogrenci("abdurrahman",160304012,abdurrahman_dersleri);
+          
+          Kimlik abdurrahman_kimlik=new Kimlik("abdurrahman",160304012);
+    ogrenci abdurrahman=new ogrenci(abdurrahman_kimlik,abdurrahman_dersleri);
     
     
    
     
     }
 }
+
