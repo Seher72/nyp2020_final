@@ -1,0 +1,26 @@
+class B {
+    static int sayac = 1;
+
+    private B() {
+
+    }
+
+    static B get_nesne() {
+        if (sayac <= 3) {
+            sayac++;
+         return new B();
+         
+        }
+        else{
+        return null;
+        }
+    }
+
+}
+
+public class JavaApplication6 {
+
+    public static void main(String[] args) {
+       
+    }
+}
