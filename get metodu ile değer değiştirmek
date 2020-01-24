@@ -1,0 +1,18 @@
+Cevap int sayilar[],çünkü diziler nesen gibi emutable değildirler,bu yüzden
+
+int[] get_sayilar(){
+return this.sayilar;
+}
+gibi bir kullanım yanlış olur,çünkü kullancıya diZini ramdaki adresi vermiş oluyoruz,
+açığı kapatmak için kullancıya dizinin kopyası yolamamız gerekiyor,
+int[] get_sayilar(){
+int[] kopya=new int[this.sayilar.length];
+for(int i=0;i<sayilar.length;i++)
+{
+kopya[i]=sayilar[i];
+
+}
+return kopya;
+}
+
+artık kulancı dizi değerleri istediği gibi değiştirebilir ana dizimiz etkilenmeden
