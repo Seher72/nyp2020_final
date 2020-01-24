@@ -1,7 +1,7 @@
 class B {
     static int sayac = 1;
 
-    private B() {
+    private B() {//doğrudan nesne oluşturması engelemek için private ekledik
 
     }
 
