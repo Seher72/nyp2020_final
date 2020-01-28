@@ -1,0 +1,22 @@
+public class Deneme {
+
+    public static int x = 0;
+
+    static {
+        x = 1;
+    }
+
+    public Deneme() {
+        x = x++;
+    }
+
+    public static void main(String[] args) {
+        Deneme x1 = new Deneme();
+        Deneme x2 = new Deneme();
+
+        System.out.println("x1= " + x1.x);
+        System.out.println("x2= " + x2.x);
+    }
+
+}
+
